@@ -1,0 +1,326 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[italian]{babel}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{tikz}
+\usepackage{tcolorbox}
+
+\geometry{margin=2cm}
+\definecolor{maincolor}{RGB}{41,128,185}
+\definecolor{accentcolor}{RGB}{52,152,219}
+\definecolor{lightgray}{RGB}{245,245,245}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\textcolor{maincolor}{\textbf{Piano Alimentare - Federico Caruso}}}
+\fancyhead[R]{\textcolor{maincolor}{\today}}
+\fancyfoot[C]{\thepage}
+
+\titleformat{\section}
+{\color{maincolor}\Large\bfseries}
+{\thesection}{1em}{}[\color{maincolor}\hrule]
+
+\titleformat{\subsection}
+{\color{accentcolor}\large\bfseries}
+{\thesubsection}{1em}{}
+
+\titleformat{\subsubsection}
+{\color{accentcolor}\normalsize\bfseries}
+{\thesubsubsection}{1em}{}
+
+\begin{document}
+
+\begin{titlepage}
+\centering
+\vspace*{2cm}
+
+{\Huge\textbf{\textcolor{maincolor}{PIANO ALIMENTARE}}}\\
+\vspace{1cm}
+{\LARGE\textcolor{accentcolor}{Federico Caruso}}\\
+\vspace{0.5cm}
+{\large Senior Customer Success \& Account Manager}
+
+\vspace{3cm}
+
+\begin{tcolorbox}[colback=lightgray,colframe=maincolor,boxrule=2pt,arc=5pt]
+\centering
+\textbf{\large DIGIUNO INTERMITTENTE}\\
+\vspace{0.5cm}
+\textbf{Finestra Alimentare:} Colazione → Cena\\
+\textbf{Digiuno:} Cena → Colazione successiva
+\end{tcolorbox}
+
+\vspace{2cm}
+\textit{\large Piano personalizzato per perdita peso e miglioramento composizione corporea}
+
+\vfill
+\textcolor{maincolor}{\today}
+\end{titlepage}
+
+\tableofcontents
+\newpage
+
+\section{Dati Antropometrici e Obiettivi}
+
+\begin{tcolorbox}[colback=lightgray,colframe=maincolor,boxrule=1pt,arc=3pt]
+\textbf{Nome:} Federico Caruso\\
+\textbf{Età:} 35+ anni\\
+\textbf{Professione:} Senior Customer Success \& Account Manager\\
+\textbf{Stile di vita:} Moderatamente attivo\\
+\textbf{Obiettivo:} Perdita peso e miglioramento composizione corporea
+\end{tcolorbox}
+
+\section{Protocollo Digiuno Intermittente}
+
+\begin{center}
+\begin{tikzpicture}[scale=0.8]
+\draw[thick,maincolor] (0,0) rectangle (12,2);
+\draw[thick,accentcolor] (1,0) rectangle (10,2);
+\node at (6,1) {\textbf{\large FINESTRA ALIMENTARE}};
+\node at (6,0.5) {\textbf{7:00 - 21:30}};
+\node at (0.5,1) {\rotatebox{90}{\footnotesize DIGIUNO}};
+\node at (11.5,1) {\rotatebox{90}{\footnotesize DIGIUNO}};
+\end{tikzpicture}
+\end{center}
+
+\subsection{Struttura Giornaliera}
+\begin{itemize}[leftmargin=*]
+\item[\textcolor{maincolor}{•}] \textbf{COLAZIONE:} 7:00-8:00
+\item[\textcolor{maincolor}{•}] \textbf{MERENDA MATTUTINA:} 10:00-11:00
+\item[\textcolor{maincolor}{•}] \textbf{PRANZO:} 13:00
+\item[\textcolor{maincolor}{•}] \textbf{CENA:} 20:00-21:30
+\item[\textcolor{maincolor}{•}] \textbf{DIGIUNO:} Dalla cena alla colazione successiva
+\end{itemize}
+
+\newpage
+
+\section{Giornate Tipo}
+
+\subsection{GIORNO 1 - Giornata di Allenamento}
+
+\begin{tcolorbox}[colback=lightgray,colframe=accentcolor,boxrule=1pt,arc=3pt,title=\textbf{COLAZIONE (7:00-8:00)}]
+\begin{itemize}[leftmargin=*,itemsep=0pt]
+\item Spremuta di arancia \textbf{200g}
+\item Yogurt greco 0\% grassi \textbf{150g}
+\item Muesli senza zuccheri aggiunti \textbf{30g}
+\end{itemize}
+
+\textit{Alternative:} Latte di avena 200g + cereali integrali 40g
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=lightgray,colframe=accentcolor,boxrule=1pt,arc=3pt,title=\textbf{MERENDA MATTUTINA (10:00-11:00)}]
+\begin{itemize}[leftmargin=*,itemsep=0pt]
+\item Frutta di stagione \textbf{150g}
+\item Mandorle \textbf{15g}
+\end{itemize}
+
+\textit{Alternative:} Kiwi 100g + noci 10g
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=lightgray,colframe=accentcolor,boxrule=1pt,arc=3pt,title=\textbf{PRANZO (13:00)}]
+\begin{itemize}[leftmargin=*,itemsep=0pt]
+\item Pasta integrale con legumi \textbf{80g}
+\item Olio extravergine oliva \textbf{10g}
+\item Verdure di stagione \textbf{150g}
+\item Parmigiano \textbf{20g}
+\end{itemize}
+
+\textit{Alternative:} Riso integrale con verdure 80g, Quinoa con legumi 70g
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=lightgray,colframe=accentcolor,boxrule=1pt,arc=3pt,title=\textbf{CENA (20:00-21:30)}]
+\begin{itemize}[leftmargin=*,itemsep=0pt]
+\item Petto di pollo \textbf{150g}
+\item Verdure grigliate \textbf{200g}
+\item Olio extravergine oliva \textbf{15g}
+\item Insalata mista \textbf{100g}
+\end{itemize}
+
+\textit{Alternative:} Pesce bianco 180g, Tacchino 120g
+\end{tcolorbox}
+
+\newpage
+
+\subsection{GIORNO 2}
+
+\begin{tcolorbox}[colback=lightgray,colframe=accentcolor,boxrule=1pt,arc=3pt,title=\textbf{COLAZIONE}]
+\begin{itemize}[leftmargin=*,itemsep=0pt]
+\item Tè verde \textbf{250g}
+\item Yogurt greco \textbf{125g}
+\item Frutta fresca \textbf{100g}
+\item Cereali integrali \textbf{25g}
+\end{itemize}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=lightgray,colframe=accentcolor,boxrule=1pt,arc=3pt,title=\textbf{MERENDA MATTUTINA}]
+\begin{itemize}[leftmargin=*,itemsep=0pt]
+\item Frutta secca mista \textbf{20g}
+\item Frutta di stagione \textbf{120g}
+\end{itemize}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=lightgray,colframe=accentcolor,boxrule=1pt,arc=3pt,title=\textbf{PRANZO - Insalata Ricca}]
+\begin{itemize}[leftmargin=*,itemsep=0pt]
+\item Tonno naturale \textbf{100g}
+\item Avocado \textbf{50g}
+\item Verdure miste \textbf{150g}
+\item Olio extravergine \textbf{15g}
+\end{itemize}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=lightgray,colframe=accentcolor,boxrule=1pt,arc=3pt,title=\textbf{CENA}]
+\begin{itemize}[leftmargin=*,itemsep=0pt]
+\item Merluzzo \textbf{180g}
+\item Verdure al vapore \textbf{200g}
+\item Olio extravergine \textbf{10g}
+\end{itemize}
+\end{tcolorbox}
+
+\newpage
+
+\subsection{GIORNO 3 - Giornata di Allenamento}
+
+\begin{tcolorbox}[colback=lightgray,colframe=accentcolor,boxrule=1pt,arc=3pt,title=\textbf{COLAZIONE}]
+\begin{itemize}[leftmargin=*,itemsep=0pt]
+\item Spremuta di arancia \textbf{200g}
+\item Uova \textbf{2 intere}
+\item Pane integrale \textbf{40g}
+\end{itemize}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=lightgray,colframe=accentcolor,boxrule=1pt,arc=3pt,title=\textbf{MERENDA MATTUTINA}]
+\begin{itemize}[leftmargin=*,itemsep=0pt]
+\item Yogurt greco \textbf{100g}
+\item Frutta secca \textbf{15g}
+\end{itemize}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=lightgray,colframe=accentcolor,boxrule=1pt,arc=3pt,title=\textbf{PRANZO}]
+\begin{itemize}[leftmargin=*,itemsep=0pt]
+\item Prosciutto crudo magro \textbf{80g}
+\item Verdure fresche \textbf{150g}
+\item Olio extravergine \textbf{20g}
+\end{itemize}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=lightgray,colframe=accentcolor,boxrule=1pt,arc=3pt,title=\textbf{CENA}]
+\begin{itemize}[leftmargin=*,itemsep=0pt]
+\item Vitello magro \textbf{150g}
+\item Verdure di stagione \textbf{180g}
+\item Olio extravergine \textbf{15g}
+\end{itemize}
+\end{tcolorbox}
+
+\subsection{GIORNO 4-6}
+\textit{[Struttura simile con rotazione di proteine, carboidrati e verdure secondo lo schema]}
+
+\subsection{GIORNO 7 - Domenica Libera}
+
+\begin{tcolorbox}[colback=lightgray,colframe=maincolor,boxrule=2pt,arc=3pt,title=\textbf{GIORNATA LIBERA - Moderazione nelle quantità}]
+\textbf{COLAZIONE:} A piacere (moderazione)\\
+\textbf{MERENDA:} Frutta 100g + frutta secca 10g\\
+\textbf{PRANZO LIBERO:} Pasta 80g con sugo a piacere + verdure 150g\\
+\textbf{CENA:} Pesce o carne magra 120g + verdure 150g
+\end{tcolorbox}
+
+\newpage
+
+\section{Ricette Base}
+
+\subsection{Pasta Integrale con Legumi}
+\begin{tabular}{ll}
+\toprule
+\textbf{Ingredienti} & \textbf{Quantità} \\
+\midrule
+Pasta integrale & 80g \\
+Legumi misti (cotti) & 100g \\
+Pomodori & 150g \\
+Olio extravergine & 10g \\
+Erbe aromatiche & q.b. \\
+\bottomrule
+\end{tabular}
+
+\textbf{Preparazione:} Cuocere la pasta al dente, saltarla con legumi e pomodori, condire con olio a crudo.
+
+\subsection{Pollo alle Erbe}
+\begin{tabular}{ll}
+\toprule
+\textbf{Ingredienti} & \textbf{Quantità} \\
+\midrule
+Petto di pollo & 150g \\
+Erbe aromatiche fresche & q.b. \\
+Olio extravergine & 15g \\
+Verdure di contorno & 200g \\
+\bottomrule
+\end{tabular}
+
+\textbf{Preparazione:} Marinare il pollo con erbe e poco olio, cuocere in padella o forno.
+
+\newpage
+
+\section{Consigli Generali}
+
+\subsection{Idratazione}
+\begin{itemize}[leftmargin=*]
+\item[\textcolor{maincolor}{•}] \textbf{Acqua:} 2-2.5 litri al giorno
+\item[\textcolor{maincolor}{•}] \textbf{Tè/tisane:} senza zucchero, tra i pasti
+\item[\textcolor{maincolor}{•}] \textbf{Caffè:} massimo 2 al giorno
+\end{itemize}
+
+\subsection{Cotture Consigliate}
+\begin{itemize}[leftmargin=*]
+\item[\textcolor{maincolor}{•}] \textbf{Carne/Pesce:} griglia, vapore, forno, padella antiaderente
+\item[\textcolor{maincolor}{•}] \textbf{Verdure:} vapore, griglia, saltate con poco olio
+\item[\textcolor{maincolor}{•}] \textbf{Evitare:} fritture, cotture con molti grassi
+\end{itemize}
+
+\subsection{Condimenti}
+\begin{itemize}[leftmargin=*]
+\item[\textcolor{maincolor}{•}] \textbf{Olio extravergine:} principalmente a crudo
+\item[\textcolor{maincolor}{•}] \textbf{Erbe e spezie:} libere per insaporire
+\item[\textcolor{maincolor}{•}] \textbf{Sale:} moderare l'uso (max 5g/giorno)
+\item[\textcolor{maincolor}{•}] \textbf{Aceto/limone:} liberi per condire
+\end{itemize}
+
+\section{Note Importanti}
+
+\begin{tcolorbox}[colback=lightgray,colframe=maincolor,boxrule=2pt,arc=3pt,title=\textbf{FLESSIBILITÀ DEL PIANO}]
+\begin{itemize}[leftmargin=*,itemsep=5pt]
+\item I giorni sono intercambiabili secondo le tue esigenze
+\item Puoi sostituire gli alimenti con le alternative proposte
+\item Rispettare sempre le grammature indicate
+\item La domenica è più libera ma sempre con moderazione
+\end{itemize}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=lightgray,colframe=accentcolor,boxrule=1pt,arc=3pt,title=\textbf{GIORNI DI ALLENAMENTO}]
+\begin{itemize}[leftmargin=*,itemsep=5pt]
+\item Aumenta leggermente l'idratazione
+\item La colazione può essere più sostanziosa
+\item Post-allenamento: piccolo spuntino proteico se necessario
+\end{itemize}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=lightgray,colframe=maincolor,boxrule=1pt,arc=3pt,title=\textbf{MONITORAGGIO}]
+\begin{itemize}[leftmargin=*,itemsep=5pt]
+\item Pesarsi 1-2 volte a settimana, sempre nello stesso momento
+\item Tenere un diario alimentare per i primi 15 giorni
+\item Ascoltare i segnali del corpo
+\item Dopo 2-3 settimane valutare eventuali modifiche
+\end{itemize}
+\end{tcolorbox}
+
+\vfill
+\begin{center}
+\textit{\large Piano personalizzato per Federico Caruso}\\
+\textcolor{maincolor}{\textbf{Obiettivo: Approccio sostenibile per il tuo stile di vita professionale}}
+\end{center}
+
+\end{document}

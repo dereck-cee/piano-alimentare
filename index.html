@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piano Alimentare - Emanuela e Federico</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Login Screen (initially visible) -->
+    <div id="loginScreen" class="login-screen">
+        <div class="login-container">
+            <div class="login-header">
+                <h1 class="login-title">ACCESSO RISERVATO</h1>
+                <h2 class="login-subtitle">Piano Alimentare - Emanuela e Federico</h2>
+            </div>
+            <form id="loginForm" class="login-form">
+                <div class="form-group">
+                    <label for="password" class="form-label">Password:</label>
+                    <input type="password" id="password" class="form-control password-input" placeholder="Inserisci la password" required>
+                </div>
+                <button type="submit" class="btn btn--primary btn--full-width login-btn">ACCEDI</button>
+                <div id="errorMessage" class="error-message hidden"></div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Main PDF Application (initially hidden) -->
+    <div id="pdfApp" class="pdf-app hidden">
+        <!-- Navigation Controls -->
+        <div class="navigation-controls">
+            <button id="prevBtn" class="nav-btn">&lt;</button>
+            <span id="pageInfo">Pagina 1 di 13</span>
+            <button id="nextBtn" class="nav-btn">&gt;</button>
+            <button id="printBtn" class="print-btn">📄 Stampa PDF</button>
+        </div>
+
+        <!-- Page 1: Copertina -->
+        <div class="page active" id="page1">
+            <div class="pdf-header">
+                <div class="header-line"></div>
+            </div>
+            <div class="pdf-content">
+                <div class="cover-page">
+                    <h1 class="cover-title">PIANO ALIMENTARE</h1>
+                    <div class="cover-name">EMANUELA E FEDERICO</div>
+                    <div class="cover-role">~ 35 anni</div>
+                    <div class="highlight-box">
+                        <div class="highlight-title">DIMAGRIMENTO E MIGLIORAMENTO STILE DI VITA</div>
+                        <div class="highlight-subtitle">Protocollo personalizzato</div>
+                    </div>
+                    <div class="cover-date">2 Settembre 2025</div>
+                </div>
+            </div>
+            <div class="pdf-footer">
+                <div class="footer-line"></div>
+                <div class="footer-content">Pagina 1</div>
+            </div>
+        </div>
+
+        <!-- Page 2: Indice -->
+        <div class="page" id="page2">
+            <div class="pdf-header">
+                <div class="header-line"></div>
+                <div class="header-title">PIANO ALIMENTARE - Emanuela e Federico</div>
+            </div>
+            <div class="pdf-content">
+                <h2>INDICE</h2>
+                <div class="index-list">
+                    <div class="index-item" data-page="3">
+                        <span>Dati Antropometrici e Obiettivi</span>
+                        <span class="page-num">3</span>
+                    </div>
+                    <div class="index-item" data-page="4">
+                        <span>Timing Pasti</span>
+                        <span class="page-num">4</span>
+                    </div>
+                    <div class="index-item" data-page="5">
+                        <span>Giorno 1 - Allenamento</span>
+                        <span class="page-num">5</span>
+                    </div>
+                    <div class="index-item" data-page="6">
+                        <span>Giorno 2 - Standard</span>
+                        <span class="page-num">6</span>
+                    </div>
+                    <div class="index-item" data-page="7">
+                        <span>Giorno 3 - Allenamento</span>
+                        <span class="page-num">7</span>
+                    </div>
+                    <div class="index-item" data-page="8">
+                        <span>Giorno 4 - Standard</span>
+                        <span class="page-num">8</span>
+                    </div>
+                    <div class="index-item" data-page="9">
+                        <span>Giorno 5 - Allenamento</span>
+                        <span class="page-num">9</span>
+                    </div>
+                    <div class="index-item" data-page="10">
+                        <span>Giorno 6 - Standard</span>
+                        <span class="page-num">10</span>
+                    </div>
+                    <div class="index-item" data-page="11">
+                        <span>Giorno 7 - Libera</span>
+                        <span class="page-num">11</span>
+                    </div>
+                    <div class="index-item" data-page="12">
+                        <span>Ricette Base</span>
+                        <span class="page-num">12</span>
+                    </div>
+                    <div class="index-item" data-page="13">
+                        <span>Consigli Generali</span>
+                        <span class="page-num">13</span>
+                    </div>
+                </div>
+            </div>
+            <div class="pdf-footer">
+                <div class="footer-line"></div>
+                <div class="footer-content">Pagina 2</div>
+            </div>
+        </div>
+
+        <!-- Page 3: Dati -->
+        <div class="page" id="page3">
+            <div class="pdf-header">
+                <div class="header-line"></div>
+                <div class="header-title">PIANO ALIMENTARE - Emanuela e Federico</div>
+            </div>
+            <div class="pdf-content">
+                <h2>DATI ANTROPOMETRICI E OBIETTIVI</h2>
+                <div class="data-box">
+                    <div class="data-row">
+                        <strong>Età:</strong> ~ 35 anni
+                    </div>
+                    <div class="data-row">
+                        <strong>Stile di vita:</strong> Moderatamente attivo
+                    </div>
+                    <div class="data-row">
+                        <strong>Obiettivo:</strong> Perdita peso e miglioramento composizione corporea
+                    </div>
+                </div>
+                
+                <div class="objectives-section">
+                    <h3>OBIETTIVI DEL PIANO</h3>
+                    <ul>
+                        <li>Riduzione graduale del peso corporeo</li>
+                        <li>Miglioramento della composizione corporea</li>
+                        <li>Ottimizzazione dell'energia durante la giornata</li>
+                        <li>Mantenimento della massa muscolare</li>
+                        <li>Miglioramento dello stile di vita</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pdf-footer">
+                <div class="footer-line"></div>
+                <div class="footer-content">Pagina 3</div>
+            </div>
+        </div>
+
+        <!-- Page 4: Timing Pasti -->
+        <div class="page" id="page4">
+            <div class="pdf-header">
+                <div class="header-line"></div>
+                <div class="header-title">PIANO ALIMENTARE - Emanuela e Federico</div>
+            </div>
+            <div class="pdf-content">
+                <h2>TIMING PASTI</h2>
+                <div class="timeline-container">
+                    <div class="timeline">
+                        <div class="time-slot eating">
+                            <div class="time">7:00-8:00</div>
+                            <div class="meal">COLAZIONE</div>
+                        </div>
+                        <div class="time-slot eating">
+                            <div class="time">13:00</div>
+                            <div class="meal">PRANZO</div>
+                        </div>
+                        <div class="time-slot eating">
+                            <div class="time">16:00-18:00</div>
+                            <div class="meal">MERENDA POMERIDIANA</div>
+                        </div>
+                        <div class="time-slot eating">
+                            <div class="time">20:00-21:30</div>
+                            <div class="meal">CENA</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="protocol-notes">
+                    <h3>NOTE IMPORTANTI</h3>
+                    <ul>
+                        <li><strong>Idratazione:</strong> Acqua libera durante tutto il giorno (2-2.5L)</li>
+                        <li><strong>Caffè/Tè:</strong> Consentiti senza zucchero tra i pasti</li>
+                        <li><strong>Merenda:</strong> Pomeridiana per sostenere l'energia</li>
+                        <li><strong>Flessibilità:</strong> Adattare gli orari alle proprie esigenze</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pdf-footer">
+                <div class="footer-line"></div>
+                <div class="footer-content">Pagina 4</div>
+            </div>
+        </div>
+
+        <!-- Pages 5-11: Giornate -->
+        <div class="page" id="page5">
+            <div class="pdf-header">
+                <div class="header-line"></div>
+                <div class="header-title">PIANO ALIMENTARE - Emanuela e Federico</div>
+            </div>
+            <div class="pdf-content">
+                <h2>GIORNO 1 - ALLENAMENTO</h2>
+                <div class="meal-container">
+                    <div class="meal-box colazione">
+                        <h3>COLAZIONE (7:00-8:00)</h3>
+                        <div class="ingredients">
+                            <div><strong>Spremuta di arancia</strong> 200g</div>
+                            <div><strong>Yogurt greco 0%</strong> 150g</div>
+                            <div><strong>Muesli senza zuccheri</strong> 30g</div>
+                        </div>
+                        <div class="alternatives">
+                            <div class="alt-label">Alternative:</div>
+                            <div><em>Latte di avena 200g + cereali integrali 40g</em></div>
+                        </div>
+                    </div>
+                    <div class="meal-box pranzo">
+                        <h3>PRANZO (13:00)</h3>
+                        <div class="ingredients">
+                            <div><strong>Pasta integrale con legumi</strong> 80g</div>
+                            <div><strong>Olio extravergine</strong> 10g</div>
+                            <div><strong>Verdure di stagione</strong> 150g</div>
+                            <div><strong>Parmigiano</strong> 20g</div>
+                        </div>
+                        <div class="alternatives">
+                            <div class="alt-label">Alternative:</div>
+                            <div><em>Riso integrale con verdure 80g</em></div>
+                            <div><em>Quinoa con legumi 70g</em></div>
+                        </div>
+                    </div>
+                    <div class="meal-box merenda">
+                        <h3>MERENDA POMERIDIANA (16:00-18:00)</h3>
+                        <div class="ingredients">
+                            <div><strong>Frutta di stagione</strong> 150g</div>
+                            <div><strong>Mandorle</strong> 15g</div>
+                        </div>
+                        <div class="alternatives">
+                            <div class="alt-label">Alternative:</div>
+                            <div><em>Kiwi 100g + noci 10g</em></div>
+                        </div>
+                    </div>
+                    <div class="meal-box cena">
+                        <h3>CENA (20:00-21:30)</h3>
+                        <div class="ingredients">
+                            <div><strong>Petto di pollo</strong> 150g</div>
+                            <div><strong>Verdure grigliate</strong> 200g</div>
+                            <div><strong>Olio extravergine</strong> 15g</div>
+                            <div><strong>Insalata mista</strong> 100g</div>
+                        </div>
+                        <div class="alternatives">
+                            <div class="alt-label">Alternative:</div>
+                            <div><em>Pesce bianco 180g</em></div>
+                            <div><em>Tacchino 120g</em></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pdf-footer">
+                <div class="footer-line"></div>
+                <div class="footer-content">Pagina 5</div>
+            </div>
+        </div>
+
+        <div class="page" id="page6">
+            <div class="pdf-header">
+                <div class="header-line"></div>
+                <div class="header-title">PIANO ALIMENTARE - Emanuela e Federico</div>
+            </div>
+            <div class="pdf-content">
+                <h2>GIORNO 2 - STANDARD</h2>
+                <div class="meal-container">
+                    <div class="meal-box colazione">
+                        <h3>COLAZIONE (7:00-8:00)</h3>
+                        <div class="ingredients">
+                            <div><strong>Tè verde</strong> 250g</div>
+                            <div><strong>Yogurt greco</strong> 125g</div>
+                            <div><strong>Frutta fresca</strong> 100g</div>
+                            <div><strong>Cereali integrali</strong> 25g</div>
+                        </div>
+                    </div>
+                    <div class="meal-box pranzo">
+                        <h3>PRANZO (13:00)</h3>
+                        <div class="ingredients">
+                            <div><strong>Tonno naturale</strong> 100g</div>
+                            <div><strong>Avocado</strong> 50g</div>
+                            <div><strong>Verdure miste</strong> 150g</div>
+                            <div><strong>Olio extravergine</strong> 15g</div>
+                        </div>
+                    </div>
+                    <div class="meal-box merenda">
+                        <h3>MERENDA POMERIDIANA (16:00-18:00)</h3>
+                        <div class="ingredients">
+                            <div><strong>Frutta secca mista</strong> 20g</div>
+                            <div><strong>Frutta di stagione</strong> 120g</div>
+                        </div>
+                    </div>
+                    <div class="meal-box cena">
+                        <h3>CENA (20:00-21:30)</h3>
+                        <div class="ingredients">
+                            <div><strong>Merluzzo</strong> 180g</div>
+                            <div><strong>Verdure al vapore</strong> 200g</div>
+                            <div><strong>Olio extravergine</strong> 10g</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pdf-footer">
+                <div class="footer-line"></div>
+                <div class="footer-content">Pagina 6</div>
+            </div>
+        </div>
+
+        <div class="page" id="page7">
+            <div class="pdf-header">
+                <div class="header-line"></div>
+                <div class="header-title">PIANO ALIMENTARE - Emanuela e Federico</div>
+            </div>
+            <div class="pdf-content">
+                <h2>GIORNO 3 - ALLENAMENTO</h2>
+                <div class="meal-container">
+                    <div class="meal-box colazione">
+                        <h3>COLAZIONE (7:00-8:00)</h3>
+                        <div class="ingredients">
+                            <div><strong>Spremuta di arancia</strong> 200g</div>
+                            <div><strong>Uova</strong> 2 intere</div>
+                            <div><strong>Pane integrale</strong> 40g</div>
+                        </div>
+                    </div>
+                    <div class="meal-box pranzo">
+                        <h3>PRANZO (13:00)</h3>
+                        <div class="ingredients">
+                            <div><strong>Prosciutto crudo magro</strong> 80g</div>
+                            <div><strong>Verdure fresche</strong> 150g</div>
+                            <div><strong>Olio extravergine</strong> 20g</div>
+                        </div>
+                    </div>
+                    <div class="meal-box merenda">
+                        <h3>MERENDA POMERIDIANA (16:00-18:00)</h3>
+                        <div class="ingredients">
+                            <div><strong>Yogurt greco</strong> 100g</div>
+                            <div><strong>Frutta secca</strong> 15g</div>
+                        </div>
+                    </div>
+                    <div class="meal-box cena">
+                        <h3>CENA (20:00-21:30)</h3>
+                        <div class="ingredients">
+                            <div><strong>Vitello magro</strong> 150g</div>
+                            <div><strong>Verdure di stagione</strong> 180g</div>
+                            <div><strong>Olio extravergine</strong> 15g</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pdf-footer">
+                <div class="footer-line"></div>
+                <div class="footer-content">Pagina 7</div>
+            </div>
+        </div>
+
+        <div class="page" id="page8">
+            <div class="pdf-header">
+                <div class="header-line"></div>
+                <div class="header-title">PIANO ALIMENTARE - Emanuela e Federico</div>
+            </div>
+            <div class="pdf-content">
+                <h2>GIORNO 4 - STANDARD</h2>
+                <div class="meal-container">
+                    <div class="meal-box colazione">
+                        <h3>COLAZIONE (7:00-8:00)</h3>
+                        <div class="ingredients">
+                            <div><strong>Latte parzialmente scremato</strong> 200g</div>
+                            <div><strong>Cereali integrali</strong> 35g</div>
+                            <div><strong>Frutta fresca</strong> 100g</div>
+                        </div>
+                    </div>
+                    <div class="meal-box pranzo">
+                        <h3>PRANZO (13:00)</h3>
+                        <div class="ingredients">
+                            <div><strong>Legumi misti (cotti)</strong> 150g</div>
+                            <div><strong>Verdure</strong> 150g</div>
+                            <div><strong>Olio extravergine</strong> 15g</div>
+                        </div>
+                    </div>
+                    <div class="meal-box merenda">
+                        <h3>MERENDA POMERIDIANA (16:00-18:00)</h3>
+                        <div class="ingredients">
+                            <div><strong>Frutta di stagione</strong> 150g</div>
+                            <div><strong>Mandorle</strong> 12g</div>
+                        </div>
+                    </div>
+                    <div class="meal-box cena">
+                        <h3>CENA (20:00-21:30)</h3>
+                        <div class="ingredients">
+                            <div><strong>Pollo</strong> 150g</div>
+                            <div><strong>Verdure cotte</strong> 200g</div>
+                            <div><strong>Olio extravergine</strong> 12g</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pdf-footer">
+                <div class="footer-line"></div>
+                <div class="footer-content">Pagina 8</div>
+            </div>
+        </div>
+
+        <div class="page" id="page9">
+            <div class="pdf-header">
+                <div class="header-line"></div>
+                <div class="header-title">PIANO ALIMENTARE - Emanuela e Federico</div>
+            </div>
+            <div class="pdf-content">
+                <h2>GIORNO 5 - ALLENAMENTO</h2>
+                <div class="meal-container">
+                    <div class="meal-box colazione">
+                        <h3>COLAZIONE (7:00-8:00)</h3>
+                        <div class="ingredients">
+                            <div><strong>Tè</strong> 250g</div>
+                            <div><strong>Yogurt greco</strong> 150g</div>
+                            <div><strong>Muesli</strong> 30g</div>
+                        </div>
+                    </div>
+                    <div class="meal-box pranzo">
+                        <h3>PRANZO (13:00)</h3>
+                        <div class="ingredients">
+                            <div><strong>Formaggio fresco (ricotta/mozzarella)</strong> 100g</div>
+                            <div><strong>Verdure</strong> 150g</div>
+                            <div><strong>Olio extravergine</strong> 12g</div>
+                        </div>
+                    </div>
+                    <div class="meal-box merenda">
+                        <h3>MERENDA POMERIDIANA (16:00-18:00)</h3>
+                        <div class="ingredients">
+                            <div><strong>Frutta fresca</strong> 120g</div>
+                            <div><strong>Noci</strong> 15g</div>
+                        </div>
+                    </div>
+                    <div class="meal-box cena">
+                        <h3>CENA (20:00-21:30)</h3>
+                        <div class="ingredients">
+                            <div><strong>Pesce</strong> 180g</div>
+                            <div><strong>Verdure</strong> 200g</div>
+                            <div><strong>Olio extravergine</strong> 15g</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pdf-footer">
+                <div class="footer-line"></div>
+                <div class="footer-content">Pagina 9</div>
+            </div>
+        </div>
+
+        <div class="page" id="page10">
+            <div class="pdf-header">
+                <div class="header-line"></div>
+                <div class="header-title">PIANO ALIMENTARE - Emanuela e Federico</div>
+            </div>
+            <div class="pdf-content">
+                <h2>GIORNO 6 - STANDARD</h2>
+                <div class="meal-container">
+                    <div class="meal-box colazione">
+                        <h3>COLAZIONE (7:00-8:00)</h3>
+                        <div class="ingredients">
+                            <div><strong>Spremuta</strong> 200g</div>
+                            <div><strong>Pane integrale</strong> 50g</div>
+                            <div><strong>Prosciutto crudo</strong> 40g</div>
+                        </div>
+                    </div>
+                    <div class="meal-box pranzo">
+                        <h3>PRANZO (13:00)</h3>
+                        <div class="ingredients">
+                            <div><strong>Uova</strong> 2 intere + 2 albumi</div>
+                            <div><strong>Verdure</strong> 150g</div>
+                            <div><strong>Olio extravergine</strong> 20g</div>
+                        </div>
+                    </div>
+                    <div class="meal-box merenda">
+                        <h3>MERENDA POMERIDIANA (16:00-18:00)</h3>
+                        <div class="ingredients">
+                            <div><strong>Frutta</strong> 150g</div>
+                            <div><strong>Pistacchi</strong> 12g</div>
+                        </div>
+                    </div>
+                    <div class="meal-box cena">
+                        <h3>CENA (20:00-21:30)</h3>
+                        <div class="ingredients">
+                            <div><strong>Carne magra</strong> 150g</div>
+                            <div><strong>Verdure</strong> 200g</div>
+                            <div><strong>Olio extravergine</strong> 15g</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pdf-footer">
+                <div class="footer-line"></div>
+                <div class="footer-content">Pagina 10</div>
+            </div>
+        </div>
+
+        <div class="page" id="page11">
+            <div class="pdf-header">
+                <div class="header-line"></div>
+                <div class="header-title">PIANO ALIMENTARE - Emanuela e Federico</div>
+            </div>
+            <div class="pdf-content">
+                <h2>GIORNO 7 - LIBERA</h2>
+                <div class="meal-container">
+                    <div class="meal-box colazione">
+                        <h3>COLAZIONE (7:00-8:00)</h3>
+                        <div class="ingredients">
+                            <div><strong>A piacere</strong> (moderazione nelle quantità)</div>
+                        </div>
+                    </div>
+                    <div class="meal-box pranzo">
+                        <h3>PRANZO (13:00)</h3>
+                        <div class="ingredients">
+                            <div><strong>Pasta</strong> 80g con sugo a piacere</div>
+                            <div><strong>Verdure</strong> 150g</div>
+                            <div><strong>Dessert piccola porzione</strong> (opzionale)</div>
+                        </div>
+                    </div>
+                    <div class="meal-box merenda">
+                        <h3>MERENDA POMERIDIANA (16:00-18:00)</h3>
+                        <div class="ingredients">
+                            <div><strong>Frutta</strong> 100g</div>
+                            <div><strong>Frutta secca</strong> 10g</div>
+                        </div>
+                    </div>
+                    <div class="meal-box cena">
+                        <h3>CENA (20:00-21:30)</h3>
+                        <div class="ingredients">
+                            <div><strong>Pesce o carne magra</strong> 120g</div>
+                            <div><strong>Verdure</strong> 150g</div>
+                            <div><strong>Olio extravergine</strong> 10g</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pdf-footer">
+                <div class="footer-line"></div>
+                <div class="footer-content">Pagina 11</div>
+            </div>
+        </div>
+
+        <!-- Page 12: Ricette -->
+        <div class="page" id="page12">
+            <div class="pdf-header">
+                <div class="header-line"></div>
+                <div class="header-title">PIANO ALIMENTARE - Emanuela e Federico</div>
+            </div>
+            <div class="pdf-content">
+                <h2>RICETTE BASE</h2>
+                
+                <div class="recipe-container">
+                    <div class="recipe">
+                        <h3>PASTA INTEGRALE CON LEGUMI</h3>
+                        <div class="ingredients-table">
+                            <div class="ingredient-row">
+                                <span class="ingredient-name"><strong>Pasta integrale</strong></span>
+                                <span class="ingredient-qty">80g</span>
+                            </div>
+                            <div class="ingredient-row">
+                                <span class="ingredient-name"><strong>Legumi misti (cotti)</strong></span>
+                                <span class="ingredient-qty">100g</span>
+                            </div>
+                            <div class="ingredient-row">
+                                <span class="ingredient-name"><strong>Pomodori</strong></span>
+                                <span class="ingredient-qty">150g</span>
+                            </div>
+                            <div class="ingredient-row">
+                                <span class="ingredient-name"><strong>Olio extravergine</strong></span>
+                                <span class="ingredient-qty">10g</span>
+                            </div>
+                        </div>
+                        <div class="preparation">
+                            <h4>PREPARAZIONE:</h4>
+                            <p>Cuocere la pasta al dente, saltarla con legumi e pomodori, condire con olio a crudo.</p>
+                        </div>
+                    </div>
+
+                    <div class="recipe">
+                        <h3>POLLO ALLE ERBE</h3>
+                        <div class="ingredients-table">
+                            <div class="ingredient-row">
+                                <span class="ingredient-name"><strong>Petto di pollo</strong></span>
+                                <span class="ingredient-qty">150g</span>
+                            </div>
+                            <div class="ingredient-row">
+                                <span class="ingredient-name"><strong>Erbe aromatiche</strong></span>
+                                <span class="ingredient-qty">q.b.</span>
+                            </div>
+                            <div class="ingredient-row">
+                                <span class="ingredient-name"><strong>Olio extravergine</strong></span>
+                                <span class="ingredient-qty">15g</span>
+                            </div>
+                            <div class="ingredient-row">
+                                <span class="ingredient-name"><strong>Verdure di contorno</strong></span>
+                                <span class="ingredient-qty">200g</span>
+                            </div>
+                        </div>
+                        <div class="preparation">
+                            <h4>PREPARAZIONE:</h4>
+                            <p>Marinare il pollo con erbe e poco olio, cuocere in padella o forno.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pdf-footer">
+                <div class="footer-line"></div>
+                <div class="footer-content">Pagina 12</div>
+            </div>
+        </div>
+
+        <!-- Page 13: Consigli -->
+        <div class="page" id="page13">
+            <div class="pdf-header">
+                <div class="header-line"></div>
+                <div class="header-title">PIANO ALIMENTARE - Emanuela e Federico</div>
+            </div>
+            <div class="pdf-content">
+                <h2>CONSIGLI GENERALI</h2>
+                
+                <div class="advice-section">
+                    <h3>💧 IDRATAZIONE</h3>
+                    <ul>
+                        <li><strong>Acqua:</strong> 2-2.5 litri al giorno</li>
+                        <li><strong>Tè/tisane:</strong> senza zucchero, tra i pasti</li>
+                        <li><strong>Caffè:</strong> massimo 2 al giorno</li>
+                    </ul>
+                </div>
+
+                <div class="advice-section">
+                    <h3>🔥 COTTURE CONSIGLIATE</h3>
+                    <ul>
+                        <li><strong>Carne/Pesce:</strong> griglia, vapore, forno</li>
+                        <li><strong>Verdure:</strong> vapore, griglia, saltate con poco olio</li>
+                        <li><strong>Evitare:</strong> fritture, cotture con molti grassi</li>
+                    </ul>
+                </div>
+
+                <div class="advice-section">
+                    <h3>🧂 CONDIMENTI</h3>
+                    <ul>
+                        <li><strong>Olio extravergine:</strong> principalmente a crudo</li>
+                        <li><strong>Erbe e spezie:</strong> libere per insaporire</li>
+                        <li><strong>Sale:</strong> moderare l'uso (max 5g/giorno)</li>
+                    </ul>
+                </div>
+
+                <div class="note-box">
+                    <h3>📝 NOTE FINALI</h3>
+                    <p>Questo piano è stato personalizzato per Emanuela e Federico. Per qualsiasi dubbio o modifica, consultare sempre il proprio nutrizionista di riferimento.</p>
+                    <p><strong>Data:</strong> 2 Settembre 2025</p>
+                </div>
+            </div>
+            <div class="pdf-footer">
+                <div class="footer-line"></div>
+                <div class="footer-content">Pagina 13</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
